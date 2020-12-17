@@ -65,7 +65,9 @@ const Login: React.FC<{}> = () => {
       if (msg.status === 'ok') {
         message.success('登录成功！');
         await refresh();
-        replaceGoto();
+        setTimeout(() => {
+          replaceGoto();
+        }, 100);
         return;
       }
       // 如果失败去设置用户错误信息
